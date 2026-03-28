@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <form class="login-box" onsubmit="fazerLogin(event)">
+            <h2>Login 🔒</h2>
+            
+            <input type="text" id="usuario" placeholder="Usuário" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        function fazerLogin(event) {
+            event.preventDefault();
+
+            let user = document.getElementById("usuario").value;
+            let pass = document.getElementById("senha").value;
+
+            if (user === "dioni" && pass === "1704") {
+
+                localStorage.setItem("logado", "true");
+
+                window.location.href = "http://localhost/dash/";
+
+            } else {
+                alert("Usuário ou senha inválidos!");
+            }
+        }
+    </script>
+
+</body>
+</html>
